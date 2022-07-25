@@ -1,1 +1,5 @@
-console.log(545454545);
+const a = 10;
+
+console.log(a + 2);
+console.log(a * 2);
+console.log(a / 2);
