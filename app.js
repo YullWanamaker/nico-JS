@@ -1,4 +1,4 @@
-let a = 5;
+let a = 3;
 let b = 2;
 let JoYull = "wanamaker";
 
