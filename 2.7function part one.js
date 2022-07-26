@@ -1,8 +1,20 @@
-function sayHello(nameOfPerson, age) {
-  console.log(nameOfPerson);
+function plus(a, b) {
+  console.log(a + b);
 }
 
-sayHello("nico",10);
-sayHello("dla"23);
-sayHello("lynn"21);
-sayHello("yull"33);
+function divide(a, b) {
+  console.log(a / b);
+}
+
+plus(60, 10);
+divide(60, 10);
+
+const player = {
+  name: "nico",
+  sayHello: function (oherPersonName) {
+    console.log("hello! " + oherPersonName + " nice to meet you");
+  },
+};
+
+console.log(player.name);
+player.sayHello("lynn");
