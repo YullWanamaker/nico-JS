@@ -1,8 +1,14 @@
 const age = parseInt(prompt("How old are you?"));
 console.log();
 
-if (isNaN(age)) {
-  console.log("please write a number");
-} else {
-  console.log("thank you for writing your age");
+if (isNaN(age) || age < 0) {
+  console.log("please write a real positive number");
+} else if (age < 18) {
+  console.log("you are too young.");
+} else if (age >= 18 && age <= 50) {
+  console.log("you can drink");
+} else if (age > 50 && age <= 80) {
+  console.log("you shound exercise");
+} else if (age > 80) {
+  console.log("you can do whatever you want");
 }
