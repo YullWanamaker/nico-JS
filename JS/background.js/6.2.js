@@ -6,12 +6,13 @@ const images = [
   "4.jpeg",
   "5.jpeg",
   "6.jpeg",
-  "7.jpeg,",
+  "7.jpeg",
   "8.jpeg",
 ];
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
-const bgImage = createElement("img");
+const bgImage = document.createElement("img");
 bgImage.src = `img/${chosenImage}`;
-console.log(bgImage);
+
+document.body.appendChild(bgImage);
