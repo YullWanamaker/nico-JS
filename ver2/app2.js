@@ -8,4 +8,4 @@ function handleinputClick(event) {
 }
 
 numberInput.addEventListener("submit", handleinputClick);
-//button.addEventListener("click", handleinputClick);
+button.addEventListener("click", handleinputClick);
