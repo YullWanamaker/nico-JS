@@ -4,8 +4,9 @@ const button = document.querySelector("#key");
 
 function handleinputClick(event) {
   event.preventDefault();
-  console.log(numberInput.value);
+  const inputnumber = numberInput.value;
+  localStorage.setItem("inputnumber", inputnumber);
 }
 
 numberInput.addEventListener("submit", handleinputClick);
-button.addEventListener("click, handleinputClick)
+button.addEventListener("click", handleinputClick);
