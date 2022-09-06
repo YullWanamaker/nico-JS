@@ -1,30 +1,24 @@
-const loginForm = document.querySelector("#login-form");
-const numberInput = document.querySelector("#input");
-const firstInput = document.querySelector("#firstInput");
-const button = document.querySelector("#key");
+const input1 = document.querySelector(".input1");
+const content2 = document.querySelector(".content2");
+const input2 = document.querySelector(".input2");
+const compare = document.querySelector(".compare");
+const result = document.querySelector(".result");
+const hidden = document.querySelector(".resultTap");
 
-function handleinputClick(event) {
+function Game(event) {
   event.preventDefault();
-  const number = Math.round(Math.randomm() * firstInput.value);
-  if (String(input.value) === String(number)) {
-    const span = document.createElement("span");
-    span.innerText = `you chose: ${input.value}, the machine chose: ${number}.`;
 
-    const h5 = document.createElement("h5");
-    h5.innerText = `you won!`;
-    span.appendChild(h5);
-    document.body.appendChild(span);
+  const Range = input1.value;
+  const chose = parseInt(input2.value, 10);
+  hidden.classList.remove("hidden");
+
+  let RandomNumber = Math.ceil(Math.random() * parseInt(Range, 10));
+  compare.innerText = `you chose ${chose}, the machine chose ${RandomNumber}`;
+  if (chose === RandomNumber) {
+    result.innerText = "you won!";
   } else {
-    const span = document.createElement("span");
-    span.innerText = `you chose: ${input.value}, the machine chose: ${number}.`;
-    const h5 = document.createElement("h5");
-    h5.innerText = `you lost!`;
-    span.appendChild(h5);
-    document.body.appendChild(span);
+    result.innerText = "you lost";
   }
-
-  const inputnumber = numberInput.value;
-  localStorage.setItem("inputnumber", inputnumber);
 }
 
-numberInput.addEventListener("submit", handleinputClick);
+content2.addEventListener("submit", Game);

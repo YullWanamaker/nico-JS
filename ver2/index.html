@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monmentum App</title>
   </head>
   <body>
     <h1>Random Number Game</h1>
-    <form id="login-form">
-      <h2>
-        Generate a number between 0 and
-        <input
-          id="firstInput"
-          ,
-          type="number"
-          ,
-          type="number"
-          ,
-          min="0"
-          ,
-          required
-        />
-      </h2>
-      <h3>
-        Guess the number :
-        <input id="input" , type="number" , min="0" , required />
-        <button id="key">Play!</button>
-      </h3>
+    <form>
+      <span> Generate a number between 0 and</span>
+      <input class="input1" type="number" min="0" />
     </form>
+    <br />
+
+    <form class="content2">
+      <span class="title2"> Guess the number :</span>
+      <input class="input2" type="number" min="0" />
+      <button>Play!</button>
+    </form>
+    <br />
+    <div class="resultTap hidden">
+      <div class="compare"></div>
+      <div class="result"></div>
+    </div>
     <script src="app2.js"></script>
   </body>
 </html>
