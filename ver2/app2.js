@@ -1,24 +1,26 @@
-const input1 = document.querySelector(".input1");
-const content2 = document.querySelector(".content2");
-const input2 = document.querySelector(".input2");
-const compare = document.querySelector(".compare");
-const result = document.querySelector(".result");
-const hidden = document.querySelector(".resultTap");
+const dday = document.querySelector("#dday");
 
-function Game(event) {
-  event.preventDefault();
+function showdday() {
+  const mastime = new Date("2022-12-25");
+  const todaytime = new Date();
 
-  const Range = input1.value;
-  const chose = parseInt(input2.value, 10);
-  hidden.classList.remove("hidden");
+  const minus = mastime - todaytime;
 
-  let RandomNumber = Math.ceil(Math.random() * parseInt(Range, 10));
-  compare.innerText = `you chose ${chose}, the machine chose ${RandomNumber}`;
-  if (chose === RandomNumber) {
-    result.innerText = "you won!";
-  } else {
-    result.innerText = "you lost";
-  }
+  const minusday = String(Math.floor(minus / (1000 * 60 * 60 * 24)));
+
+  const minushours = String(
+    Math.floor((minus / (1000 * 60 * 60)) % 24)
+  ).padStart(2, "0");
+
+  const minusminutes = String(Math.floor((minus / (1000 * 60)) % 60)).padStart(
+    2,
+    "0"
+  );
+
+  const minusseconds = String(Math.floor((minus / 1000) % 60)).padStart(2, "0");
+
+  dday.innerText = `${minusday}d ${minushours}h ${minusminutes}m ${minusseconds}s`;
 }
 
-content2.addEventListener("submit", Game);
+showdday();
+setInterval(showdday, 1000);
