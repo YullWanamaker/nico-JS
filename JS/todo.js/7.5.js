@@ -27,7 +27,6 @@ function paintToDo(newTodo) {
 
 function handleToDoSubmit(event) {
   event.preventDefault();
-  console.log(toDoInput.value);
   const newTodo = toDoInput.value;
   toDoInput.value = "";
   toDos.push(newTodo);
@@ -39,7 +38,6 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-console.log(savedToDos);
 if (savedToDos !== null) {
   const parsedTodos = JSON.parse(savedToDos);
   toDos = parsedTodos;
